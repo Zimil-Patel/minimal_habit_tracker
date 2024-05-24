@@ -6,13 +6,16 @@ import 'package:provider/provider.dart';
 class AnimatedThemeButton extends StatelessWidget {
   const AnimatedThemeButton({
     super.key,
+    this.size = 40,
   });
+
+  final double size;
 
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
       key: Provider.of<ThemeProvider>(context).animationKey,
-      tween: Tween<double>(begin: 10, end: 40),
+      tween: Tween<double>(begin: 10, end: size),
       duration: const Duration(milliseconds: 400),
       builder: (context, value, child) => CupertinoButton(
         onPressed: () {
