@@ -11,6 +11,8 @@ class SideDrawer extends StatelessWidget {
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const LinearBorder(),
+
+      // ANIMATED BUTTON FOR THEME CHANGE
       child: const Center(
         child: AnimatedThemeButton(),
       ),
