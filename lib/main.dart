@@ -15,6 +15,9 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (context) => HabitDatabase(),
+        ),
+        ChangeNotifierProvider(
           create: (context) => ThemeProvider(),
         ),
       ],
