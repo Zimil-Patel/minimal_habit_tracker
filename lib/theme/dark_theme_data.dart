@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 ThemeData darkTheme = ThemeData(
+  scaffoldBackgroundColor: Colors.black,
   colorScheme: ColorScheme.light(
-    background: Colors.black,
     primary: Colors.grey.shade600,
     secondary: Colors.grey.shade700,
     tertiary: const Color(0xff272727),
