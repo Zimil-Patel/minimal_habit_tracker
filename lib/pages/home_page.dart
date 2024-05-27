@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     // PRINT MESSAGE WHEN WHOLE SCREEN GET REBUILT
-    log('Screen re-Build');
+    log('------------------------- Home page rebuild -------------------------');
     return Scaffold(
       key: scaffoldKey,
       appBar: apppBar(scaffoldKey),

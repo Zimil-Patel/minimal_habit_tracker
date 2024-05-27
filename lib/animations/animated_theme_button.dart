@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:minimal_habi_tracker/theme/theme_provider.dart';
@@ -13,8 +15,9 @@ class AnimatedThemeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log('------------------------- Animation screen rebuild -------------------------');
     return TweenAnimationBuilder(
-      key: Provider.of<ThemeProvider>(context).animationKey,
+      // key: Provider.of<ThemeProvider>(context).animationKey,
       tween: Tween<double>(begin: 10, end: size),
       duration: const Duration(milliseconds: 400),
       builder: (context, value, child) => CupertinoButton(
