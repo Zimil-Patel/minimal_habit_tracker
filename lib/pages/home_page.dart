@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                 borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurface.withOpacity(0.2),)
               ),
               focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurface,)
+                  borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurface, width: 2)
               ),
             ),
           ),
