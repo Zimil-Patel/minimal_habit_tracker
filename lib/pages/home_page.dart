@@ -9,6 +9,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
+    // TEXT EDITING CONTROLLER FOR NEW HABIT INPUT
+    TextEditingController txtHabit = TextEditingController();
+
+    // CREATE NEW HABIT ON FLOATING ACTION BUTTON PRESS
+    createNewHabit() {
+      // SHOW ALTER DIALOG FOR HABIT INPUT
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          content: TextField(
+            controller: txtHabit,
+            decoration: InputDecoration(),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       key: scaffoldKey,
       // APPBAR
@@ -20,7 +37,7 @@ class HomePage extends StatelessWidget {
       // FLAOTING ACTION BUTTON
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).colorScheme.tertiary,
-        onPressed: () {},
+        onPressed: createNewHabit(),
         shape: const CircleBorder(),
         child: Icon(
           Icons.add,
