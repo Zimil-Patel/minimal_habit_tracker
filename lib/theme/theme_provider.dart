@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/theme/dark_theme_data.dart';
-import 'package:minimal_habi_tracker/theme/light_theme_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'dark_theme_data.dart';
+import 'light_theme_data.dart';
 
 class ThemeProvider extends ChangeNotifier {
   // INITIAL THEME MODE: DARK

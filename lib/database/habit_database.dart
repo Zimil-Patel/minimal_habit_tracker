@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/models/app_settings.dart';
-import 'package:minimal_habi_tracker/models/habit.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:isar/isar.dart';
+
+import '../models/app_settings.dart';
+import '../models/habit.dart';
 
 class HabitDatabase extends ChangeNotifier {
   static late Isar isar;
@@ -65,7 +66,7 @@ class HabitDatabase extends ChangeNotifier {
     await readAllHabits();
   }
 
-  // UDPATE - toggle habit (on / off)
+  // UPDATE - toggle habit (on / off)
   Future<void> updateHabitCompletion(int id, bool isCompleted) async {
     // FIND SPECIFIC HABIT
     final habit = await isar.habits.get(id);
@@ -96,14 +97,14 @@ class HabitDatabase extends ChangeNotifier {
     readAllHabits();
   }
 
-  // UDPATE - change habit name
+  // UPDATE - change habit name
   Future<void> updateHabitName(int id, String newHabitName) async {
     // FETCH SPECIFIC HABIT
     final habit = await isar.habits.get(id);
 
     // UPDATE HABIT NAME
     if (habit != null) {
-      // UDPATE NAME TO OBJECT
+      // UPDATE NAME TO OBJECT
       await isar.writeTxn(() async {
         habit.name = newHabitName;
         // SAVE UPDATED OBJECT OF HABIT TO DATABASE

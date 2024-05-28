@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
+
+import '../theme/theme_provider.dart';
 
 class AnimatedThemeButton extends StatelessWidget {
   const AnimatedThemeButton({

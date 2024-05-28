@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/database/habit_database.dart';
-import 'package:minimal_habi_tracker/pages/home_page.dart';
-import 'package:minimal_habi_tracker/theme/theme_provider.dart';
+import 'package:minimal_habit_tracker/pages/home_page.dart';
+import 'package:minimal_habit_tracker/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
+
+import 'database/habit_database.dart';
 
 void main() async {
   // INITIALIZING DATABASE AND SAVING FIRST APP LAUNCH DATE

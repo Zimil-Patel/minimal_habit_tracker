@@ -12,6 +12,11 @@ ThemeData lightTheme = ThemeData(
     onSurface: Colors.black,
   ),
 
+  // BY DEFAULT DIALOG THEME
+  dialogTheme: const DialogTheme(
+    backgroundColor: Color(0xfff1f3f4),
+  ),
+
   // BY DEFAULT APP BAR THEME
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.white,

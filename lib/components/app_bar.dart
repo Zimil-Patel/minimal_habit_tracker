@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/animations/animated_theme_button.dart';
-import 'package:minimal_habi_tracker/utils/constants.dart';
 
-AppBar apppBar(GlobalKey<ScaffoldState> scaffoldKey) {
+import '../animations/animated_theme_button.dart';
+import '../utils/constants.dart';
+
+AppBar appBar(GlobalKey<ScaffoldState> scaffoldKey) {
   return AppBar(
     title: const Text(
       'Habit Tracker',
@@ -25,7 +26,7 @@ AppBar apppBar(GlobalKey<ScaffoldState> scaffoldKey) {
 
     // ACTION BUTTONS
     actions: const [
-      // ANIMATED THEME BCHANGE BUTTON
+      // ANIMATED THEME CHANGE BUTTON
       Padding(
         padding: EdgeInsets.symmetric(horizontal: defaultPadding),
         child: AnimatedThemeButton(

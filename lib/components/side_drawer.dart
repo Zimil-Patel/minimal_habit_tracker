@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/animations/animated_theme_button.dart';
+
+import '../animations/animated_theme_button.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({

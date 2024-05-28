@@ -12,6 +12,10 @@ ThemeData darkTheme = ThemeData(
     onSurface: Colors.white,
   ),
 
+  dialogTheme:  DialogTheme(
+    backgroundColor: Colors.grey.shade700,
+  ),
+
   // BY DEFAULT APP BAR THEME
   appBarTheme: const AppBarTheme(
     backgroundColor: Color(0xff1e1e1e),
