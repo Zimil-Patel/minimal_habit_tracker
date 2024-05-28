@@ -9,6 +9,7 @@ ThemeData lightTheme = ThemeData(
     tertiary: Colors.white,
     inversePrimary: Colors.grey.shade900,
     surface: const Color(0xfff1f3f4),
+    onSurface: Colors.black,
   ),
 
   // BY DEFAULT APP BAR THEME

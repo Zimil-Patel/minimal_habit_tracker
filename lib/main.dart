@@ -14,12 +14,11 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => HabitDatabase(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => ThemeProvider(),
-        ),
+        // HABIT PROVIDER
+        ChangeNotifierProvider(create: (context) => HabitDatabase()),
+
+        // THEME PROVIDER
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],
       child: const MinimalHabitTracker(),
     ),

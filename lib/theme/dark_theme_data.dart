@@ -9,6 +9,7 @@ ThemeData darkTheme = ThemeData(
     tertiary: const Color(0xff272727),
     inversePrimary: const Color.fromARGB(255, 247, 95, 95),
     surface: const Color(0xff1e1e1e),
+    onSurface: Colors.white,
   ),
 
   // BY DEFAULT APP BAR THEME

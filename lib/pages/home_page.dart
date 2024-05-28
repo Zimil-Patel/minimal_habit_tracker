@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minimal_habi_tracker/pages/components/app_bar.dart';
-import 'package:minimal_habi_tracker/pages/components/side_drawer.dart';
+import 'package:minimal_habi_tracker/components/app_bar.dart';
+import 'package:minimal_habi_tracker/components/side_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,8 +11,22 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       key: scaffoldKey,
+      // APPBAR
       appBar: apppBar(scaffoldKey),
+
+      // DRAWER
       drawer: const SideDrawer(),
+
+      // FLAOTING ACTION BUTTON
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
+        onPressed: () {},
+        shape: const CircleBorder(),
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).colorScheme.onSurface,
+        ),
+      ),
     );
   }
 }
