@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -28,8 +26,6 @@ class ThemeProvider extends ChangeNotifier {
     SharedPreferences themePreference = await SharedPreferences.getInstance();
     isDark = !isDark;
     await themePreference.setBool('isDark', isDark);
-    log('------------------- Theme update: $isDark -------------------');
-    log('------------------- Theme update: notifyListeners -------------------');
     notifyListeners();
   }
 }

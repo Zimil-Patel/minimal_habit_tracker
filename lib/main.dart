@@ -38,16 +38,14 @@ class MinimalHabitTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeProvider>(
-      builder: (context, themeProvider, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: lightTheme,
-          darkTheme: darkTheme,
-          themeMode: themeProvider.isDark ? ThemeMode.dark : ThemeMode.light,
-          home: const HomePage(),
-        );
-      },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: Provider.of<ThemeProvider>(context).isDark
+          ? ThemeMode.dark
+          : ThemeMode.light,
+      home: const HomePage(),
     );
   }
 }
