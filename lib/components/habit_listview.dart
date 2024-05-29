@@ -18,6 +18,9 @@ class BuildHabitList extends StatelessWidget {
     List<Habit> habitList = habitDatabase.currentHabitList;
 
     return ListView(
+      reverse: true,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       children: List.generate(
         habitList.length,
         (index) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_habit_tracker/components/build_heat_map.dart';
 import 'package:minimal_habit_tracker/components/create_new_habit_button.dart';
 import 'package:minimal_habit_tracker/components/habit_listview.dart';
 import '../components/app_bar.dart';
@@ -24,7 +25,15 @@ class HomePage extends StatelessWidget {
       floatingActionButton: const CreateNewHabitButton(),
 
       // BODY
-      body: const BuildHabitList(),
+      body: ListView(
+        children: const [
+          // HEAT MAP
+          BuildHeatMap(),
+
+          // HABIT LIST
+          BuildHabitList(),
+        ],
+      ),
     );
   }
 }

@@ -6,6 +6,7 @@ import '../utils/constants.dart';
 
 AppBar appBar(GlobalKey<ScaffoldState> scaffoldKey) {
   return AppBar(
+    backgroundColor: Colors.transparent,
     title: const Text(
       'Habit Tracker',
       style: TextStyle(fontWeight: FontWeight.w600),
