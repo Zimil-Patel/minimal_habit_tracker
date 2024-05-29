@@ -8,6 +8,10 @@ import '../models/habit.dart';
 class HabitDatabase extends ChangeNotifier {
   static late Isar isar;
 
+  HabitDatabase() {
+    readAllHabits();
+  }
+
   // initialization of database
   static Future<void> initializeDatabase() async {
     final directory = await getApplicationCacheDirectory();
@@ -90,11 +94,11 @@ class HabitDatabase extends ChangeNotifier {
         }
 
         await isar.habits.put(habit);
+
+        // RE-READ HABIT FOR UI UPDATE
+        await readAllHabits();
       });
     }
-
-    // RE-READ HABIT FOR UI UPDATE
-    readAllHabits();
   }
 
   // UPDATE - change habit name
@@ -113,7 +117,7 @@ class HabitDatabase extends ChangeNotifier {
     }
 
     // RE-READ HABIT FOR UI UPDATE
-    readAllHabits();
+    await readAllHabits();
   }
 
   // DELETE - delete habit from database
@@ -124,6 +128,6 @@ class HabitDatabase extends ChangeNotifier {
     });
 
     // RE-READ HABIT FOR UI UPDATE
-    readAllHabits();
+    await readAllHabits();
   }
 }

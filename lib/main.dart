@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_habit_tracker/pages/home_page.dart';
+import 'package:minimal_habit_tracker/theme/dark_theme_data.dart';
+import 'package:minimal_habit_tracker/theme/light_theme_data.dart';
 import 'package:minimal_habit_tracker/theme/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'database/habit_database.dart';
 
 void main() async {
-  // INITIALIZING DATABASE AND SAVING FIRST APP LAUNCH DATE
+  // Ensure the widget binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize ThemeProvider and load theme preferences
+  final themeProvider = ThemeProvider();
+  await themeProvider.checkForThemePreference();
+
+  // Initialize HabitDatabase
   await HabitDatabase.initializeDatabase();
   await HabitDatabase().saveFirstAppLaunchDate();
 
@@ -19,7 +26,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => HabitDatabase()),
 
         // THEME PROVIDER
-        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => themeProvider),
       ],
       child: const MinimalHabitTracker(),
     ),
@@ -31,10 +38,16 @@ class MinimalHabitTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: Provider.of<ThemeProvider>(context).themeData,
-      home: const HomePage(),
+    return Consumer<ThemeProvider>(
+      builder: (context, themeProvider, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: lightTheme,
+          darkTheme: darkTheme,
+          themeMode: themeProvider.isDark ? ThemeMode.dark : ThemeMode.light,
+          home: const HomePage(),
+        );
+      },
     );
   }
 }

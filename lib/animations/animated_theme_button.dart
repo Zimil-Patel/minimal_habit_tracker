@@ -22,7 +22,7 @@ class AnimatedThemeButton extends StatelessWidget {
           Provider.of<ThemeProvider>(context, listen: false).toggleThemeData();
         },
         padding: EdgeInsets.zero,
-        child: Provider.of<ThemeProvider>(context).isDarkMode
+        child: Provider.of<ThemeProvider>(context).isDark
             ? AnimatedIcon(
                 begin: 1,
                 end: 6,
