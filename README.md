@@ -55,4 +55,9 @@ Habit Tracker is a Flutter application that helps users track their habits and t
 
 </div>
 
-###
+## Video Preview 🎥
+
+
+https://github.com/Zimil-Patel/minimal_habit_tracker/assets/112332000/613784fc-cb08-4afa-b23f-b33e6a1f9fa1
+
+
